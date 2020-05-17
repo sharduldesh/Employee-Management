@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/EmployeeInformation">
+
+    <fragment
+        android:id="@+id/EmployeeInformation"
+        android:name="com.techm.employeemanagement.ui.EmployeeInformation"
+        android:label="@string/employee_information_label"
+        tools:layout="@layout/fragment_employee_list">
+
+        <action
+            android:id="@+id/action_EmployeeInformation_to_AddEmployee"
+            app:destination="@id/AddEmployee" />
+    </fragment>
+    <fragment
+        android:id="@+id/AddEmployee"
+        android:name="com.techm.employeemanagement.ui.CreateEmployeeFragment"
+        android:label="@string/create_employee"
+        tools:layout="@layout/fragment_create_employee">
+
+        <action
+            android:id="@+id/action_AddEmployee_to_EmployeeInformation"
+            app:destination="@id/EmployeeInformation" />
+    </fragment>
+</navigation>
